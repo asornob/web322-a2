@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "tw:build": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css"
+    "postinstall": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css",
+    "start": "node server.js"
   },
   "dependencies": {
     "tailwindcss": "^3.4.0",

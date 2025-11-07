@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Solutions - Home</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto p-6">
+    <div class="hero bg-base-200 rounded-xl p-8 text-center">
+      <h1 class="text-4xl font-bold mb-4">Welcome to Climate Solutions</h1>
+      <p class="mb-4">Explore projects that are changing the world for a better climate!</p>
+      <a href="/solutions/projects" class="btn btn-primary">View Projects</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://placehold.co/300x200" alt="Project 1"></figure>
+        <div class="card-body">
+          <h2 class="card-title">Project 1</h2>
+          <p>Short description about project 1.</p>
+          <a href="/solutions/projects/1" class="btn btn-outline">Details</a>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://placehold.co/300x200" alt="Project 2"></figure>
+        <div class="card-body">
+          <h2 class="card-title">Project 2</h2>
+          <p>Short description about project 2.</p>
+          <a href="/solutions/projects/2" class="btn btn-outline">Details</a>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://placehold.co/300x200" alt="Project 3"></figure>
+        <div class="card-body">
+          <h2 class="card-title">Project 3</h2>
+          <p>Short description about project 3.</p>
+          <a href="/solutions/projects/3" class="btn btn-outline">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

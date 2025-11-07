@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Climate Solutions</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto p-8 text-center">
+    <div class="hero bg-base-200 rounded-xl p-8 mb-10">
+      <h1 class="text-4xl font-bold mb-2">Projects by Sector</h1>
+      <p class="mb-4">Choose a sector from the navbar to view related projects.</p>
+      <div class="flex justify-center gap-4">
+        <a href="/solutions/projects?sector=Energy" class="btn btn-outline">Energy</a>
+        <a href="/solutions/projects?sector=Transportation" class="btn btn-outline">Transportation</a>
+        <a href="/solutions/projects?sector=Industry" class="btn btn-outline">Industry</a>
+        <a href="/solutions/projects?sector=Agriculture" class="btn btn-outline">Agriculture</a>
+      </div>
+    </div>
+
+    <% if (projects && projects.length > 0) { %>
+      <table class="table w-full bg-base-100 shadow-xl">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Sector</th>
+            <th>Summary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% projects.forEach(p => { %>
+            <tr>
+              <td><%= p.title %></td>
+              <td><a href="/solutions/projects?sector=<%= p.sector %>" class="btn btn-sm btn-outline"><%= p.sector %></a></td>
+              <td><%= p.summary_short %></td>
+              <td><a href="/solutions/projects/<%= p.id %>" class="btn btn-sm btn-primary">Details</a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No projects found for this sector.</p>
+    <% } %>
+  </div>
+</body>
+</html>

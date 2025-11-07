@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= project.title %> - Climate Solutions</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto p-10">
+    <div class="hero bg-base-200 rounded-xl p-10 text-center">
+      <h1 class="text-4xl font-bold mb-4"><%= project.title %></h1>
+      <p class="mb-4">Below you’ll find details about this project.</p>
+    </div>
+
+    <div class="mt-10">
+      <img src="<%= project.feature_img_url %>" alt="<%= project.title %>" class="rounded-xl mx-auto shadow-xl mb-6 max-w-lg">
+      <p class="text-lg mb-4"><%= project.intro_short %></p>
+      <p class="mb-4"><strong>Impact:</strong> <%= project.impact %></p>
+      <a href="<%= project.original_source_url %>" target="_blank" class="btn btn-primary mb-6">Learn More</a>
+
+      <div id="quoteBox" class="italic"></div>
+
+      <a href="#" onclick="history.back(); return false;" class="btn btn-outline mt-8">⬅ Back</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+      fetch("https://dummyjson.com/quotes/random")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("quoteBox").innerHTML =
+          `"${data.quote}" — <strong>${data.author}</strong>`;
+      })
+      .catch(()=> console.log("Quote fetch failed"));
+    });
+  </script>
+</body>
+</html>
